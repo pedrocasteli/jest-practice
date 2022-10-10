@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Output from "./Output";
 
 const Greeting = () => {
     const [changedText, setChangedText] = useState(false);
@@ -10,7 +11,11 @@ const Greeting = () => {
     return (
         <React.Fragment>
             <h1>Hello, world!</h1>
-            {!changedText ? <p>It's good to see you.</p> : <p>Changed!</p>}
+            {!changedText ? (
+                <Output>It's good to see you.</Output>
+            ) : (
+                <Output>Changed!</Output>
+            )}
             <button onClick={changeTextHandler}>Change text</button>
         </React.Fragment>
     );
